@@ -1,4 +1,4 @@
-# 1806ICT Programming Fundamantals
+# 1806ICT Programming Fundamentals
 
 ## Centralised resources 
 
