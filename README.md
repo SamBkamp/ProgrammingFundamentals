@@ -2,7 +2,7 @@
 
 ## Centralised resources 
 
-I created this repo so that we can share resources and code for this course that we can all access. If you have anything to add, submit a pull request and I'll probably accept it! If you want to submit your own code, be sure to create a folder with your name/handle with your solutions in it, but if you just want to add general stuff you can add it in the root folder.
+I created this repo so that we can share resources and code for this course that we can all access. If you have anything to add, submit a pull request and I'll  accept it! If you want to submit your own code, be sure to create a folder with your name/handle with your solutions in it, but if you just want to add general stuff you can add it in the root folder.
 
 |**Lecture**   |   On-line in Microsoft Teams, Mondays, 9am - 10:50am|
 | :------------ | :------------ |
