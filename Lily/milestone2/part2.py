@@ -6,43 +6,43 @@ problem = input("input the word sum: ").split(" ")
 
 words = "".join(problem)
 
-def assignment(letters):
+def assignment(letters): #function to assign random number values to each letter
     letter_assignments = {}
 
     for i in letters:
-        randomNumber = math.floor(random.random()*10)
+        randomNumber = math.floor(random.random()*10) #generates random number
 
-        while(randomNumber in letter_assignments.values()):
+        while(randomNumber in letter_assignments.values()): #if number already assigned to another letter, regenerate
             randomNumber = math.floor(random.random()*10)
             
-        letter_assignments[i] = randomNumber
+        letter_assignments[i] = randomNumber #assign number in dictionary
         
     return letter_assignments
         
 
-def check_equation(assignments):
+def check_equation(assignments): #function to check if the equation is true
     leftTotal = 0
     rightTotal = ""
     
-    for i in problem[0:-1]:
+    for i in problem[0:-1]: #left side of the equation
         number = ""
     
-        for letters in i:
+        for letters in i: #takes each number representation of each letter and concatonates them
             number += str(assignments.get(letters))
 
-        leftTotal += int(number)
+        leftTotal += int(number) #adds numbers representing each word, then adds to the running total of left side words
 
-    for letter in problem[len(problem)-1]:
+    for letter in problem[len(problem)-1]: #calculating numerical value of the right side of the equation
         rightTotal += str(assignments.get(letter))
 
-    if(leftTotal == int(rightTotal)):    
+    if(leftTotal == int(rightTotal)):    #checks if the equation is true 
        return True
     else:
        return False
 
 
-def idkHandlerLol():
-    letter_amount = []
+def idkHandlerLol(): #deals with the results of both two functions above
+    letter_amount = [] #this section creates array of all letters (no duplicates)
 
     for i in words:
         if(i not in letter_amount):
@@ -50,9 +50,9 @@ def idkHandlerLol():
             
     assignments = assignment(letter_amount)
 
-    while(not check_equation(assignments)):
+    while(not check_equation(assignments)): #checks if assignments give a true equation, if not, reroll numbers
         assignments = assignment(letter_amount)
 
-    print(assignments)
+    print(assignments) #absolutely no formatting for output yet, sorry lol
     
 idkHandlerLol()    
