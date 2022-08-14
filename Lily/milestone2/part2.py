@@ -6,13 +6,16 @@ problem = input("input the word sum: ").split(" ")
 
 words = "".join(problem)
 
+firstLetter = []
+
+
 def assignment(letters): #function to assign random number values to each letter
     letter_assignments = {}
 
     for i in letters:
         randomNumber = math.floor(random.random()*10) #generates random number
 
-        while(randomNumber in letter_assignments.values()): #if number already assigned to another letter, regenerate
+        while(randomNumber in letter_assignments.values() or i in firstLetter and randomNumber == 0): #if number already assigned to another letter, regenerate
             randomNumber = math.floor(random.random()*10)
             
         letter_assignments[i] = randomNumber #assign number in dictionary
@@ -42,17 +45,21 @@ def check_equation(assignments): #function to check if the equation is true
 
 
 def idkHandlerLol(): #deals with the results of both two functions above
+    attempts = 0
     letter_amount = [] #this section creates array of all letters (no duplicates)
 
     for i in words:
         if(i not in letter_amount):
             letter_amount.append(i)
             
+    for lol in problem: firstLetter.append(lol[0]) 
+    
     assignments = assignment(letter_amount)
 
     while(not check_equation(assignments)): #checks if assignments give a true equation, if not, reroll numbers
         assignments = assignment(letter_amount)
+        attempts += 1
 
-    print(assignments) #absolutely no formatting for output yet, sorry lol
+    print(assignments, attempts) #absolutely no formatting for output yet, sorry lol
     
 idkHandlerLol()    
