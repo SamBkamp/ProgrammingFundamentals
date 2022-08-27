@@ -15,7 +15,7 @@ def assignment(letters): #function to assign random number values to each letter
     for i in letters:
         randomNumber = math.floor(random.random()*10) #generates random number
 
-        while(randomNumber in letter_assignments.values() or i in firstLetter and randomNumber == 0): #if number already assigned to another letter, regenerate
+        while(randomNumber in letter_assignments.values() or i in firstLetter and randomNumber == 0): #if number already assigned to another letter OR if letter is first letter and equal to 0, regenerate
             randomNumber = math.floor(random.random()*10)
             
         letter_assignments[i] = randomNumber #assign number in dictionary
